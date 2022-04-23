@@ -52,7 +52,7 @@ set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "${MONERO_BUILD_DIR}"
 
 include(MyUtils)
 
-find_package(Clerici-Main)
+find_package(Clerici-main)
 
 # find boost
 find_package(Boost COMPONENTS
