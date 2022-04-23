@@ -51,7 +51,7 @@ foreach (l ${LIBS})
 
 	set(Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY})
 
-	message(STATUS FindMonero " Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY}")
+	message(STATUS FindClerici-main " Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY}")
 
 	if(NOT "${Xmr_${L}_LIBRARIES}" STREQUAL "${Xmr_${L}_LIBRARY-NOTFOUND}")
 	  add_library(${l} STATIC IMPORTED)
@@ -61,16 +61,16 @@ foreach (l ${LIBS})
 endforeach()
 
 if (EXISTS ${MONERO_BUILD_DIR}/src/ringct/libringct_basic.a)
-	message(STATUS FindMonero " found libringct_basic.a")
+	message(STATUS FindClerici-main " found libringct_basic.a")
 	add_library(ringct_basic STATIC IMPORTED)
 	set_property(TARGET ringct_basic
 			PROPERTY IMPORTED_LOCATION ${MONERO_BUILD_DIR}/src/ringct/libringct_basic.a)
 endif()
 
 if (EXISTS ${MONERO_BUILD_DIR}/src/cryptonote_basic/libcryptonote_format_utils_basic.a)
-	message(STATUS FindMonero " found libcryptonote_format_utils_basic.a")
+	message(STATUS FindClerici-main " found libcryptonote_format_utils_basic.a")
 	add_library(cryptonote_format_utils_basic STATIC IMPORTED)
-	set_property(TARGET cryptonote_format_utils_basic 
+	set_property(TARGET cryptonote_format_utils_basic
 		PROPERTY IMPORTED_LOCATION ${MONERO_BUILD_DIR}/src/cryptonote_basic/libcryptonote_format_utils_basic.a)
 endif()
 
