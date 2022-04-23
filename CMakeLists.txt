@@ -14,7 +14,7 @@ endif()
 
 
 if (NOT MONERO_DIR)
-    set(MONERO_DIR ~/monero)
+    set(MONERO_DIR ~/Clerici-main)
 endif()
 
 message(STATUS MONERO_DIR ": ${MONERO_DIR}")
@@ -29,8 +29,8 @@ if (NOT MONERO_BUILD_DIR)
     set(MONERO_BUILD_DIR ${MONERO_SOURCE_DIR}/build/release/
           CACHE PATH "Path to the build directory for Monero")
 
-   if (NOT EXISTS ${MONERO_BUILD_DIR})   
-        # try different location   
+   if (NOT EXISTS ${MONERO_BUILD_DIR})
+        # try different location
         message(STATUS "Trying different folder for monero libraries")
         set(MONERO_BUILD_DIR ${MONERO_SOURCE_DIR}/build/Linux/master/release/
             CACHE PATH "Path to the build directory for Monero" FORCE)
@@ -38,7 +38,7 @@ if (NOT MONERO_BUILD_DIR)
 
 endif()
 
-if (NOT EXISTS ${MONERO_BUILD_DIR})   
+if (NOT EXISTS ${MONERO_BUILD_DIR})
   message(FATAL_ERROR "Monero libraries not found in: ${MONERO_BUILD_DIR}")
 endif()
 
@@ -52,7 +52,7 @@ set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "${MONERO_BUILD_DIR}"
 
 include(MyUtils)
 
-find_package(Monero)
+find_package(Clerici-Main)
 
 # find boost
 find_package(Boost COMPONENTS
@@ -156,7 +156,7 @@ set(LIBRARIES
         mnemonics
         easylogging
         checkpoints
-        cncrypto        
+        cncrypto
         miniupnpc
         version
         epee
