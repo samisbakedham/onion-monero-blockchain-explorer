@@ -18,7 +18,7 @@ namespace xmreg
         p.add("txhash", -1);
 
         options_description desc(
-                "clcblocks, Onion Clerici Blockchain Explorer");
+                "xmrblocks, Onion Clerici Blockchain Explorer");
 
         desc.add_options()
                 ("help,h", value<bool>()->default_value(false)->implicit_value(true),
