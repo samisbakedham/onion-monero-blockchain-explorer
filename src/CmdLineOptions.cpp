@@ -18,7 +18,7 @@ namespace xmreg
         p.add("txhash", -1);
 
         options_description desc(
-                "xmrblocks, Onion Monero Blockchain Explorer");
+                "clcblocks, Onion Clerici Blockchain Explorer");
 
         desc.add_options()
                 ("help,h", value<bool>()->default_value(false)->implicit_value(true),
@@ -71,8 +71,8 @@ namespace xmreg
                  "path to key file for ssl (https) functionality")
                 ("daemon-login", value<string>(),
                  "Specify username[:password] for daemon RPC client")
-                ("daemon-url,d", value<string>()->default_value("http:://127.0.0.1:18081"),
-                 "Monero daemon url");
+                ("daemon-url,d", value<string>()->default_value("http:://127.0.0.1:28081"),
+                 "Clerici daemon url");
 
 
         store(command_line_parser(acc, avv)

@@ -297,13 +297,13 @@ CurrentBlockchainStatus::is_thread_running()
    return is_running;
 }
 
-bf::path CurrentBlockchainStatus::blockchain_path {"/home/mwo/.bitmonero/lmdb"};
+bf::path CurrentBlockchainStatus::blockchain_path {"/root/.CLC/lmdb"};
 
 cryptonote::network_type CurrentBlockchainStatus::nettype {cryptonote::network_type::MAINNET};
 
 string CurrentBlockchainStatus::output_file {"emission_amount.txt"};
 
-string CurrentBlockchainStatus::daemon_url {"http:://127.0.0.1:18081"};
+string CurrentBlockchainStatus::daemon_url {"http:://127.0.0.1:28081"};
 
 uint64_t  CurrentBlockchainStatus::blockchain_chunk_size {10000};
 
