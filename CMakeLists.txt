@@ -148,7 +148,6 @@ set(LIBRARIES
         cryptonote_protocol
         multisig
         daemonizer
-        blocks
         lmdb
         ringct
         ringct_basic
