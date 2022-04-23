@@ -14,7 +14,7 @@ endif()
 
 
 if (NOT MONERO_DIR)
-    set(MONERO_DIR ~/Clerici-main)
+    set(MONERO_DIR ~/go/bin/Clerici-main)
 endif()
 
 message(STATUS MONERO_DIR ": ${MONERO_DIR}")
