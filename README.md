@@ -34,7 +34,7 @@ Testnet version:
  - [https://testnet.xmrchain.com/](https://testnet.xmrchain.com/) - https enabled.
 
 Stagenet version:
- 
+
  - [https://stagenet.xmrchain.net/](https://stagenet.xmrchain.net/)
 
 i2p users (main Monero network):
@@ -102,7 +102,7 @@ as follows:
 # go to home folder if still in ~/monero
 cd ~
 
-# download the source code 
+# download the source code
 git clone https://github.com/moneroexamples/onion-monero-blockchain-explorer.git
 
 # enter the downloaded sourced code folder
@@ -287,9 +287,9 @@ xmrblocks, Onion Monero Blockchain Explorer:
                                         functionality
   --ssl-key-file arg                    path to key file for ssl (https)
                                         functionality
-  -d [ --daemon-url ] arg (=http:://127.0.0.1:18081)
-                                        Monero daemon url
-  --daemon-login arg                    Specify username[:password] for daemon 
+  -d [ --daemon-url ] arg (=http:://127.0.0.1:28081)
+                                        Clerici daemon url
+  --daemon-login arg                    Specify username[:password] for daemon
                                         RPC client
 ```
 

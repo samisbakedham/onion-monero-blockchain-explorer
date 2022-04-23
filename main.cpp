@@ -207,10 +207,10 @@ main(int ac, const char* av[])
 
     string daemon_url {*daemon_url_opt};
 
-    if (testnet && daemon_url == "http:://127.0.0.1:18081")
+    if (testnet && daemon_url == "http:://127.0.0.1:28081")
         daemon_url = "http:://127.0.0.1:28081";
-    if (stagenet && daemon_url == "http:://127.0.0.1:18081")
-        daemon_url = "http:://127.0.0.1:38081";
+    if (stagenet && daemon_url == "http:://127.0.0.1:28081")
+        daemon_url = "http:://127.0.0.1:28081";
 
     uint64_t mempool_info_timeout {5000};
 
@@ -221,7 +221,7 @@ main(int ac, const char* av[])
     }
     catch (boost::bad_lexical_cast &e)
     {
-        cout << "Cant cast " << (*mempool_info_timeout_opt) 
+        cout << "Cant cast " << (*mempool_info_timeout_opt)
              <<" into numbers. Using default values.\n";
     }
 
@@ -338,7 +338,7 @@ main(int ac, const char* av[])
     ([&](size_t block_height) {
         return myxmr::htmlresponse(xmrblocks.show_block(block_height));
     });
-    
+
     CROW_ROUTE(app, "/randomx/<uint>")
     ([&](size_t block_height) {
         return myxmr::htmlresponse(xmrblocks.show_randomx(block_height));
@@ -411,7 +411,7 @@ main(int ac, const char* av[])
     ([&](string tx_hash, uint16_t with_ring_signatures)
      {
         return myxmr::htmlresponse(
-                xmrblocks.show_tx(remove_bad_chars(tx_hash), 
+                xmrblocks.show_tx(remove_bad_chars(tx_hash),
                     with_ring_signatures));
     });
     if (enable_autorefresh_option)
@@ -472,7 +472,7 @@ main(int ac, const char* av[])
     });
 
     CROW_ROUTE(app, "/prove").methods("POST"_method)
-        ([&](const crow::request& req) -> myxmr::htmlresponse 
+        ([&](const crow::request& req) -> myxmr::htmlresponse
          {
 
             map<std::string, std::string> post_body
@@ -506,7 +506,7 @@ main(int ac, const char* av[])
 
     CROW_ROUTE(app, "/prove/<string>/<string>/<string>")
     ([&](const crow::request& req, string tx_hash,
-         string xmr_address, string tx_prv_key) 
+         string xmr_address, string tx_prv_key)
      {
 
         string domain = get_domain(req);
@@ -533,7 +533,7 @@ main(int ac, const char* av[])
             map<std::string, std::string> post_body
                     = xmreg::parse_crow_post_data(req.body);
 
-            if (post_body.count("rawtxdata") == 0 
+            if (post_body.count("rawtxdata") == 0
                     || post_body.count("action") == 0)
             {
                 return string("Raw tx data or action not provided");
@@ -811,7 +811,7 @@ main(int ac, const char* av[])
             }
             catch (const boost::bad_lexical_cast &e)
             {
-                cerr << "Cant parse tx_prove as bool. Using default value" 
+                cerr << "Cant parse tx_prove as bool. Using default value"
                      << endl;
             }
 
